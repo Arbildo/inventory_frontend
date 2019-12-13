@@ -1,0 +1,36 @@
+<nb-card class="miclase">
+  <nb-card-header>Crear usuario</nb-card-header>
+  <nb-card-body>
+    <form novalidate [formGroup]="form">
+      <label for="nombres">Nombres</label>
+      <input type="text" class="form-control" id="nombres" formControlName="nombres">
+      <label for="apellidos">Apellidos</label>
+      <input type="text" class="form-control" id="apellidos" formControlName="apellidos">
+      <label for="usuario">Usuario</label>
+      <input type="text" class="form-control" id="usuario" formControlName="usuario">
+      <label for="correo">E-mail</label>
+      <input type="text" class="form-control" id="correo" formControlName="correo">
+      <label for="password">Password</label>
+      <input type="text" class="form-control" id="password" formControlName="password">
+      <div>
+        <label class="label-modal" for="idCargo">Cargo</label>
+        <label class="label-select">
+          <select class="label-select" required formControlName="idCargo">
+            <option id="idCargo" class="form-control" *ngFor="let index of userCharges"  value="{{ index.idCargo }}">{{ index.cargo }}</option>
+          </select>
+        </label>
+      </div>
+      <div>
+        <label class="label-modal" for="idEstado">Estado</label>
+        <label class="label-select">
+          <select class="label-select" required formControlName="idEstado">
+            <option id="idEstado" class="form-control" *ngFor="let index of userStates"  value="{{ index.idEstado }}" >{{index.estado}}</option>
+          </select>
+        </label>
+      </div>
+      <div class="btn-wrapper">
+        <button type="submit" class="btn btn-primary" (click)="onSubmit()">Actualizar</button>
+      </div>
+    </form>
+  </nb-card-body>
+</nb-card>

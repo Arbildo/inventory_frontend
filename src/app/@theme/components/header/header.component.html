@@ -1,0 +1,19 @@
+<div class="header-container">
+  <div class="logo-container" >
+    <a (click)="toggleSidebar()" href="#" class="sidebar-toggle">
+      <nb-icon icon="menu-2-outline"></nb-icon>
+    </a>
+    <a class="logo" href="#" (click)="navigateHome()">Mega Security Solutions SAC.</a>
+  </div>
+</div>
+<ngx-conection-header></ngx-conection-header>
+<div class="header-container">
+  <nb-actions size="small">
+    <nb-action class="user-action" (click)="onMenuAction()" >
+      <nb-user [nbContextMenu]="userMenu"
+               [onlyPicture]="userPictureOnly"
+               [name]="user.nombres +' '+user.apellidos">
+      </nb-user>
+    </nb-action>
+  </nb-actions>
+</div>

@@ -1,0 +1,26 @@
+<div class="miclase">
+  <nb-card>
+    <nb-card-header>Generar ingreso de producto</nb-card-header>
+    <nb-card-body>
+      <form novalidate [formGroup]="form">
+        <label class="label-modal">Producto</label>
+        <select class="label-select" required formControlName="idProducto">
+          <option id="idProducto" class="form-control" *ngFor="let index of productList"  value="{{ index.idProducto }}" > {{ index.nombre }}</option>
+        </select>
+        <label class="label-modal">Lote</label>
+        <select class="label-select" required formControlName="idLote">
+          <option id="idLote" class="form-control" *ngFor="let index of loteList"  value="{{ index.idLote }}" > {{ index.nombre }} - {{index.estado}}</option>
+        </select>
+        <label for="precio">Precio</label>
+        <input type="text" class="form-control" id="precio" formControlName="precio" required>
+        <label for="stockInicial">Stock inicial</label>
+        <input type="text" class="form-control" id="stockInicial" formControlName="stockInicial" required>
+        <label for="stockMinimo">Stock mínimo</label>
+        <input type="text" class="form-control" id="stockMinimo" formControlName="stockMinimo" required>
+        <div class="btn-wrapper">
+        <button type="submit" class="btn btn-primary" (click)="saveForm()">Registrar</button>
+        </div>
+      </form>
+    </nb-card-body>
+  </nb-card>
+</div>

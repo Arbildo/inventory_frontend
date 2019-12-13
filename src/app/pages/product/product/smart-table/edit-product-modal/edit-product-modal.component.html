@@ -1,0 +1,30 @@
+<nb-card>
+  <nb-card-header>Producto</nb-card-header>
+  <nb-card-body>
+    <form novalidate [formGroup]="form">
+      <label for="idProducto">Id</label>
+      <input type="text" class="form-control" id="idProducto" formControlName="idProducto">
+      <label for="nombre">Producto</label>
+      <input type="text" class="form-control" id="nombre" formControlName="nombre">
+      <label for="codigo">Codigo</label>
+      <input type="text" class="form-control" id="codigo" formControlName="codigo">
+      <label for="descripcion">Descripción</label>
+      <textarea type="text" class="form-control" id="descripcion" formControlName="descripcion"></textarea>
+      <label for="estado">Estado</label>
+      <label>
+        <select required formControlName="estado">
+          <option id="estado" class="form-control" *ngFor="let index of productStates"  value="{{ index.idEstado }}" > {{ index.estado }}</option>
+        </select>
+      </label>
+      <label for="tipo">Tipo</label>
+      <label>
+        <select required formControlName="tipo">
+          <option id="tipo" class="form-control" *ngFor="let index of productTypes"  value="{{ index.idTipo }}" > {{ index.nombre }}</option>
+        </select>
+      </label>
+      <label for="unidad">Unidad</label>
+      <input type="text" class="form-control" id="unidad" formControlName="unidad">
+      <button type="submit" class="btn btn-success" (click)="onSubmit()">Actualizar</button>
+    </form>
+  </nb-card-body>
+</nb-card>

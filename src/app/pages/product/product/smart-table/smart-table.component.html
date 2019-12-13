@@ -1,0 +1,13 @@
+<nb-card accent="info">
+  <nb-card-header>
+    Productos
+    <button nbButton class="product-add-button" (click)="open()" > + </button>
+  </nb-card-header>
+  <nb-card-body>
+    <ng2-smart-table [settings]="settings"
+                     [source]="source"
+                     (userRowSelect)="onUserRowSelect($event)"
+                     (deleteConfirm)="onDeleteConfirm($event)">
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card>

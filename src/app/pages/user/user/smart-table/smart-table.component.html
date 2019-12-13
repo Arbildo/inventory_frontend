@@ -1,0 +1,15 @@
+<div class="user-create-button">
+  <button nbButton class="product-add-button" (click)="openModalToCreate()"> Crear usuario</button>
+</div>
+<nb-card>
+  <nb-card-header>
+    Usuarios
+  </nb-card-header>
+  <nb-card-body>
+    <ng2-smart-table [settings]="settings"
+                     [source]="source"
+                     (userRowSelect)="onUserRowSelect($event)" >
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card>
+

@@ -1,0 +1,39 @@
+<nb-card class="miclase">
+  <nb-card-header>Detalle de producto</nb-card-header>
+  <nb-card-body>
+    <form novalidate [formGroup]="form">
+      <label for="id">Id Detalle</label>
+      <input type="text" class="form-control" id="id" formControlName="id">
+      <label for="producto">Producto</label>
+      <input type="text" class="form-control" id="producto" formControlName="producto">
+      <label for="stockInicial">Stock Inicial</label>
+      <input type="text" class="form-control" id="stockInicial" formControlName="stockInicial">
+      <label for="stockActual">Stock Actual</label>
+      <input type="text" class="form-control" id="stockActual" formControlName="stockActual">
+      <label for="stockMinimo">Stock Mínimo</label>
+      <input type="text" class="form-control" id="stockMinimo" formControlName="stockMinimo">
+      <label for="precio">Precio</label>
+      <input type="text" class="form-control" id="precio" formControlName="precio">
+      <div>
+      <label class="label-modal" for="lote">Lote</label>
+      <label class="label-select">
+        <select class="label-select" required formControlName="lote">
+          <option id="lote" class="form-control" *ngFor="let index of lotsList"  value="{{ index.idLote }}" >{{index.idLote}} - {{ index.nombre }} - ({{index.estado}})</option>
+        </select>
+      </label>
+      </div>
+      <div>
+      <label class="label-modal" for="estado">Estado</label>
+      <label class="label-select">
+        <select class="label-select" required formControlName="estado">
+          <option id="estado" class="form-control" *ngFor="let index of productDetailStates"  value="{{ index.id }}" > {{ index.nombre }}</option>
+        </select>
+      </label>
+      </div>
+      <div class="btn-wrapper">
+        <button type="submit" class="btn btn-primary" (click)="onSubmit()">Actualizar</button>
+      </div>
+    </form>
+  </nb-card-body>
+</nb-card>
+

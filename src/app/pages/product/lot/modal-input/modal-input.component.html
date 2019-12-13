@@ -1,0 +1,12 @@
+<div class="modal-form-product">
+  <nb-card>
+    <nb-card-header>Crear Lote</nb-card-header>
+    <nb-card-body>
+      <form [formGroup]="lotForm" (ngSubmit)="saveForm(lotForm.value)">
+        <label for="nombre">Nombre</label>
+        <input type="text" class="form-control" id="nombre" formControlName="nombre" required>
+        <button type="submit" class="btn btn-success">Registrar</button>
+      </form>
+    </nb-card-body>
+  </nb-card>
+</div>

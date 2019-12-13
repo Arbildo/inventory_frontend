@@ -1,0 +1,72 @@
+<div class="clientes-container">
+  <form [formGroup]="formOutputClient">
+    <nb-card>
+      <nb-card-body class="foo">
+          <select required formControlName="ndocumento" class="selectClient" (change)="onEnterClient($event.target.value)">
+            <option id="ndocumento" class="form-control" *ngFor="let index of clientList"  value="{{ index.ndocumento }}" >
+              {{index.ndocumento }} - {{ index.nombre }}</option>
+          </select>
+            <label for="direccion">Dirección</label>
+            <input type="text" class="form-control" id="direccion" formControlName="direccion">
+            <label for="direccion">Telefono</label>
+            <input type="text" class="form-control" id="telefono" formControlName="telefono">
+      </nb-card-body>
+    </nb-card>
+  </form>
+</div>
+<div class="output-product-container">
+<div class="productos-container">
+<form novalidate [formGroup]="formOutputProduct">
+  <nb-card>
+    <nb-card-body>
+        <select required formControlName="idProductoDetalle" (change)="populateProductDetails($event)">
+          <option id="idProductoDetalle" class="form-control" *ngFor="let index of productDetailList"  value="{{ index.idProductoDetalle }}" >
+            {{index.idProductoDetalle }} - {{ index.nombre }}</option>
+        </select><br>
+        <label for="id">Id Producto</label>
+        <input type="text" class="form-control" id="id" formControlName="id" >
+        <label for="nombreProducto">Producto</label>
+        <input type="text" class="form-control" id="nombreProducto" formControlName="nombreProducto">
+        <label for="lote">Lote</label>
+        <input type="text" class="form-control" id="lote" formControlName="lote">
+        <label for="stockInicial">Stock Inicial</label>
+        <input type="text" class="form-control" id="stockInicial" formControlName="stockInicial">
+        <label for="stockActual">Stock Actual</label>
+        <input type="text" class="form-control" id="stockActual" formControlName="stockActual">
+        <label for="precio">Precio</label>
+        <input type="text" class="form-control" id="precio" formControlName="precio">
+        <label for="cantidad">Cantidad</label>
+        <input type="text" class="form-control" id="cantidad" formControlName="cantidad">
+    </nb-card-body>
+  </nb-card>
+</form>
+  <button (click)="addDetail()">Agregar a la lista</button>
+</div>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Producto</th>
+    <th scope="col">Cliente</th>
+    <th scope="col">Cantidad</th>
+    <th scope="col">Costo</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let detail of productBuying; index as i">
+    <th scope="row">{{ i + 1 }}</th>
+    <td>
+      {{ detail.producto }}
+    </td>
+    <td>{{ detail.cliente }}</td>
+    <td>{{ detail.cantidad }}</td>
+    <td>{{ detail.costo }}</td>
+  </tr>
+  </tbody>
+  <tfoot>
+  <h3>Total: {{ total }}</h3>
+  </tfoot>
+</table>
+</div>
+<button (click)="onBuying()">Realizar compra!</button>
+

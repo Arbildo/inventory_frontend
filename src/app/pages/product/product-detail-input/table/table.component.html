@@ -1,0 +1,15 @@
+<div class="actions">
+  <button nbButton class="lot-add-button" (click)="openModalToCreateInput()" > Generar ingreso de producto </button>
+</div>
+<nb-card accent="info">
+  <nb-card-header>
+    Detalle de Productos
+  </nb-card-header>
+  <nb-card-body>
+    <ng2-smart-table [settings]="settings"
+                     [source]="source"
+                     (userRowSelect)="onUserRowSelect($event)" >
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card>
+

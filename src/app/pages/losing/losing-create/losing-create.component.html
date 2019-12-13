@@ -1,0 +1,19 @@
+<div class="modal-form-create-product">
+  <nb-card>
+    <nb-card-header>Generar reporte de pérdida de producto</nb-card-header>
+    <nb-card-body>
+      <form [formGroup]="productLoseForm" (ngSubmit)="onSaveForm(productLoseForm.value)">
+        <label>Detalle de producto</label><br>
+        <select required formControlName="idProductoDetalle">
+          <option id="idProductoDetalle" class="form-control" *ngFor="let index of productDetailList"
+                  value="{{ index.idProductoDetalle }}" > Código detalle: {{index.idProductoDetalle}} - {{ index.nombre }}</option>
+        </select><br>
+        <label for="cantidad">Cantidad</label>
+        <input type="text" class="form-control" id="cantidad" formControlName="cantidad" required>
+        <label for="descripcion">Descripción</label>
+        <textarea type="text" class="form-control" id="descripcion" formControlName="descripcion" required></textarea>
+        <button type="submit" class="btn btn-success">Registrar</button>
+      </form>
+    </nb-card-body>
+  </nb-card>
+</div>

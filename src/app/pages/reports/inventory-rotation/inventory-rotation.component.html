@@ -1,0 +1,18 @@
+<nb-card class="bar">
+  <nb-card-header>Generar reporte de exactitud de inventario por: </nb-card-header>
+  <nb-card-body>
+    <div class="container">
+      <form [formGroup]="exactitudForm">
+        <label>
+          <select formControlName="idLote" >
+            <option id="idLote" class="form-control" *ngFor="let index of lotsList"  value="{{ index.idLote }}" > {{ index.idLote }} - {{ index.nombre }}</option>
+          </select>
+        </label>
+        <button (click)="onGenerateReport()">Generar reporte</button>
+      </form>
+    </div>
+  </nb-card-body>
+  <nb-card-footer>
+  </nb-card-footer>
+</nb-card>
+

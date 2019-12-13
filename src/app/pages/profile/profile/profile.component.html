@@ -1,0 +1,21 @@
+  <div class='my-profile'>
+    <nb-card>
+      <nb-card-header>Mi perfil</nb-card-header>
+      <nb-card-body>
+        <form novalidate [formGroup]='profileForm'>
+          <label for='idUsuario'>Id Usuario</label>
+          <input type='text' class='form-control' id='idUsuario' formControlName='idUsuario' >
+          <label for='codigo'>Codigo</label>
+          <input type='text' class='form-control' id='codigo' formControlName='codigo'>
+          <label for='nombres'>Nombres: </label>
+          <input type='text' class='form-control' id='nombres' formControlName='nombres'>
+          <label for='apellidos'>Apellidos</label>
+          <input type='text' class='form-control' id='apellidos' formControlName='apellidos'>
+          <label for='correo'>Correo</label>
+          <input type='text' class='form-control' id='correo' formControlName='correo'>
+          <label for='cargo'>Cargo</label>
+          <input type='text' class='form-control' id='cargo' formControlName='cargo'>
+        </form>
+      </nb-card-body>
+    </nb-card>
+  </div>

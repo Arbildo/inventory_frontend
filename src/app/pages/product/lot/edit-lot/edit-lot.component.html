@@ -1,0 +1,26 @@
+<nb-card class="lotModal">
+  <nb-card-header>Producto</nb-card-header>
+  <nb-card-body>
+    <form novalidate [formGroup]="form">
+      <label for="idLote">Id</label>
+      <input type="text" class="form-control" id="idLote" formControlName="idLote">
+      <label for="nombre">Lote</label>
+      <input type="text" class="form-control" id="nombre" formControlName="nombre">
+      <div class="date">
+      <label for="fechaCreacion">Fecha de creacion</label>
+      <input class="form-control" formControlName="fechaCreacion" ngbDatepicker #c="ngbDatepicker" id="fechaCreacion" (click)="c.toggle()">
+      </div>
+      <div class="date">
+      <label for="fechaVencimiento">Fecha de vencimiento</label>
+      <input class="form-control" formControlName="fechaVencimiento" ngbDatepicker #v="ngbDatepicker" id="fechaVencimiento" (click)="v.toggle()">
+      </div>
+      <label for="estado">Estado</label>
+      <label>
+        <select required formControlName="estado">
+          <option id="estado" class="form-control" *ngFor="let index of loteStates"  value="{{ index.id }}" > {{ index.nombre }}</option>
+        </select>
+      </label><br>
+      <button type="submit" class="btn btn-success" (click)="onSubmit()">Actualizar</button>
+    </form>
+  </nb-card-body>
+</nb-card>

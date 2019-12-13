@@ -1,0 +1,33 @@
+<nb-card>
+  <nb-card-header>Detalle del pedido</nb-card-header>
+  <nb-card-body>
+    <form novalidate [formGroup]="form">
+      <label for="idPedido">Id Pedido</label>
+      <input type="text" class="form-control" id="idPedido" formControlName="idPedido">
+      <label for="fechaPedido">Fecha pedido</label>
+      <input type="text" class="form-control" id="fechaPedido" formControlName="fechaPedido">
+      <label for="nombre">Cliente</label>
+      <input type="text" class="form-control" id="nombre" formControlName="nombre">
+      <label for="total">Total</label>
+      <input type="text" class="form-control" id="total" formControlName="total">
+      <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Producto</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Precio</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let detail of detailPedido; let i = index">
+        <th scope="row">{{ i+1 }}</th>
+        <td>{{ detail.producto }}</td>
+        <td>{{ detail.cantidad | number }}</td>
+        <td>{{ detail.precio | number }}</td>
+      </tr>
+      </tbody>
+      </table>
+    </form>
+  </nb-card-body>
+</nb-card>

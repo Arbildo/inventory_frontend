@@ -1,0 +1,23 @@
+<form novalidate [formGroup]="form">
+<div class="bydate">
+  <label for="report">Generar reporte por fecha: </label>
+  <label class="dateSelect">
+    <select formControlName="date">
+      <option id="report" class="form-control" *ngFor="let index of datesforReport"  value="{{ index.date }}" > {{ index.date }}</option>
+    </select>
+    <button (click)="onReportClick()">Generar</button>
+  </label>
+</div>
+</form>
+<nb-card accent="info">
+  <nb-card-header>
+    Salida de productos
+  </nb-card-header>
+  <nb-card-body>
+    <ng2-smart-table [settings]="settings"
+                     [source]="source"
+                     (userRowSelect)="onUserRowSelect($event)" >
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card>
+

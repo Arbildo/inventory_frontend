@@ -1,0 +1,30 @@
+<nb-card class="miclase">
+  <nb-card-header>Detalle de pérdida</nb-card-header>
+  <nb-card-body>
+    <form novalidate [formGroup]="form">
+      <label for="id">Id</label>
+      <input type="text" class="form-control" id="id" formControlName="id">
+      <label for="codigoPerdida">Código de pérdida</label>
+      <input type="text" class="form-control" id="codigoPerdida" formControlName="codigoPerdida">
+      <label for="fecha">Fecha</label>
+      <input type="text" class="form-control" id="fecha" formControlName="fecha">
+      <label for="cantidad">Cantidad</label>
+      <input type="text" class="form-control" id="cantidad" formControlName="cantidad">
+      <label for="descripcion">Descripción</label>
+      <textarea type="text" class="form-control" id="descripcion" formControlName="descripcion"></textarea>
+      <label for="detalleProducto">Detalle de producto</label>
+      <input type="text" class="form-control" id="detalleProducto" formControlName="detalleProducto">
+      <label for="producto">Producto</label>
+      <input type="text" class="form-control" id="producto" formControlName="producto">
+      <label for="lote">Lote</label>
+      <input type="text" class="form-control" id="lote" formControlName="lote">
+      <label for="precio">Precio</label>
+      <input type="text" class="form-control" id="precio" formControlName="precio">
+      <label for="estado">Estado</label>
+      <input type="text" class="form-control" id="estado" formControlName="estado">
+      <div class="btn-wrapper">
+      <button type="submit" class="btn btn-success" (click)="onSubmit()">Aprobar</button>
+      </div>
+    </form>
+  </nb-card-body>
+</nb-card>

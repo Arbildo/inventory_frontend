@@ -1,0 +1,19 @@
+<div class="modal-form-product">
+  <nb-card>
+    <nb-card-header>Crear producto</nb-card-header>
+    <nb-card-body>
+        <form [formGroup]="productForm" (ngSubmit)="saveForm(productForm.value)">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" id="nombre" formControlName="nombre" required>
+            <label for="descripcion">Descripcion</label>
+            <textarea type="text" class="form-control" id="descripcion" formControlName="descripcion" ></textarea>
+            <label>Tipo</label><br>
+            <select required formControlName="tipo">
+              <option id="tipo" class="form-control" *ngFor="let index of productTypeList"  value="{{ index.idTipo }}" > {{ index.nombre }}</option>
+            </select>
+          <br>
+          <button type="submit" class="btn btn-success">Registrar</button>
+          </form>
+    </nb-card-body>
+  </nb-card>
+</div>
