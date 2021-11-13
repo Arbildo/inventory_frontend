@@ -16,7 +16,7 @@ export class ProfileComponent implements OnInit {
               private authService: AuthService,
               private userService: UsersService,
   ) {
-    this.user = authService.currentUserValue;
+    this.user = authService.getToken();
     this.profileForm = this.formBuilder.group({
       idUsuario:	[{value: '', disabled: true}],
       codigo: [{value: '', disabled: true}],
@@ -28,13 +28,22 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit() {
+    //   this.profileForm.setValue({
+    //     idUsuario: this.user.idUsuario,
+    //       codigo : this.user.codigo,
+    //       nombres: this.user.nombres,
+    //       apellidos: this.user.apellidos,
+    //       correo: this.user.correo,
+    //       cargo: this.user.cargo.nombre,
+    // });
+
       this.profileForm.setValue({
-        idUsuario: this.user.idUsuario,
-          codigo : this.user.codigo,
-          nombres: this.user.nombres,
-          apellidos: this.user.apellidos,
-          correo: this.user.correo,
-          cargo: this.user.cargo.nombre,
+        idUsuario: '',
+          codigo : '',
+          nombres: '',
+          apellidos: '',
+          correo: '',
+          cargo: '',
     });
   }
 }

@@ -9,14 +9,14 @@ import {UserModule} from './user/user.module';
 import {ClientsModule} from './clients/clients.module';
 import {LosingModule} from './losing/losing.module';
 import {ReportsModule} from './reports/reports.module';
-import {ProfileModule} from './profile/profile.module';
+import {MainModule} from './main/main.module';
 
 @NgModule({
   imports: [
     PagesRoutingModule,
     ThemeModule,
     NbMenuModule,
-    ProfileModule,
+    MainModule,
     ProductModule,
     UserModule,
     ClientsModule,

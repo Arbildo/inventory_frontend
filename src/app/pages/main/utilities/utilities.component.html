@@ -1,0 +1,24 @@
+<div class="main-container">
+  <div class="header-container">
+    <label>
+      {{ title }}
+    </label>
+    <select>
+      <option *ngFor="let item of selectOptions"
+              value='{{ item.value }}'>{{ item.label }}
+      </option>
+    </select>
+  </div>
+  <table>
+    <thead>
+    <tr>
+      <th *ngFor="let item  of tabledHeader">{{item}}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let row of tableValues">
+      <td *ngFor="let value of row">{{returnValue(value)}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

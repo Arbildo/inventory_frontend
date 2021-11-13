@@ -1,0 +1,42 @@
+table, th, td {
+  border: 1px solid #dedbdb;
+  padding: 10px;
+}
+th {
+  width: 20px;
+}
+table {
+  width: 400px;
+}
+label {
+  font-weight: bold;
+}
+
+.main-container {
+  text-align: center;
+  border: none;
+  background-color: white;
+  padding: 20px;
+  display: inline-block;
+  border-radius: 25px;
+  margin: 5px;
+  box-shadow: 0 0 5px 0 #464646;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #dedbdb;
+  width: 100%;
+  padding-bottom: 5px;
+}
+
+select {
+  padding: 0 1em 0 0;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+}

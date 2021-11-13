@@ -5,7 +5,7 @@ import { LayoutService } from '../../../@core/utils';
 import { map, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import {AuthService} from '../../../auth/auth.service';
-import {User} from '../../../__entities/user';
+import {Token} from '../../../__entities/user';
 
 @Component({
   selector: 'ngx-header',
@@ -14,7 +14,7 @@ import {User} from '../../../__entities/user';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
 
-  user: User;
+  user: Token;
   private destroy$: Subject<void> = new Subject<void>();
   userPictureOnly: boolean = false;
 
@@ -35,7 +35,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
               private breakpointService: NbMediaBreakpointsService,
               private authService: AuthService) {
     if (this.authService.isAuthenticated()) {
-      this.user = this.authService.currentUserValue;
+      this.user = this.authService.getToken();
     }
   }
 

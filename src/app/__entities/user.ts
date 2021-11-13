@@ -12,6 +12,10 @@ export interface User {
   cargo: Cargo;
 }
 
+export interface Token {
+  token: string;
+}
+
 export interface Estado {
   idEstado: number;
   estado: string;
