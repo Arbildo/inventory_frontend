@@ -57,7 +57,7 @@
     "ckeditor": "4.7.3",
     "classlist.js": "1.1.20150312",
     "core-js": "2.5.1",
-    "dexie": "^2.0.4",
+    "dexie": "^3.2.2",
     "echarts": "^4.0.2",
     "eva-icons": "^1.1.0",
     "intl": "1.2.5",
